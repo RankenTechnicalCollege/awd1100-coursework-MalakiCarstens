@@ -20,6 +20,10 @@ double salary1_2027 = salary1_2026 * (1 + PERCENT_RAISE);
 double salary2_2027 = salary2_2026 * (1 + PERCENT_RAISE);
 double salary3_2027 = salary3_2026 * (1 + PERCENT_RAISE);
 Console.WriteLine("Year        {0}            {1}           {2}", employee1, employee2, employee3);
-Console.WriteLine("2025        {0}            {1}           {2}", salary1_2025, salary2_2025, salary3_2025);
-Console.WriteLine("2026        {0}            {1}           {2}", salary1_2026, salary2_2026, salary3_2026);
-Console.WriteLine("2027        {0}            {1}           {2}", salary1_2027, salary2_2027, salary3_2027);
+//Console.WriteLine("2025        {0}            {1}           {2}", salary1_2025, salary2_2025, salary3_2025);
+//Console.WriteLine("2026        {0}            {1}           {2}", salary1_2026, salary2_2026, salary3_2026);
+//Console.WriteLine("2027        {0:C}            {1:C}           {2:C}", salary1_2027, salary2_2027, salary3_2027);
+
+Console.WriteLine($"2025\t{salary1_2025:C}\t{salary2_2025:C}\t{salary3_2025:C}");
+Console.WriteLine($"2026\t{salary1_2026:C}\t{salary2_2026:C}\t{salary3_2026:C}");
+Console.WriteLine($"2027\t{salary1_2027:C}\t{salary2_2027:C}\t{salary3_2027:C}");
