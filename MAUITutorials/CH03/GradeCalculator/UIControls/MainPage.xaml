@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UIControls.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Multi-line Input:" />
+            <Editor Placeholder="Enter your comments here" AutoSize="TextChanges" />
+
+            <Label Text="Sample Image:" />
+            <Image Source="dotnet_bot.png." HeightRequest="100" WidthRequest="100" />
+
+            <HorizontalStackLayout>
+                <CheckBox x:Name="chkAgree" />
+                <Label Text="I agree to the terms" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <VerticalStackLayout>
+                <RadioButton Content="Red" GroupName="Colors" />
+                <RadioButton Content="Green" GroupName="Colors" />
+                <RadioButton Content="Blue" GroupName="Colors" />
+            </VerticalStackLayout>
+
+            <Label Text="Volume:" />
+            <Slider Minimum="0" Maximum="100" Value="50" />
+
+            <Label Text="Quantity:" />
+            <Stepper Minimum="1" Maximum="10" Increment="1" Value="1" />
+            
+            <Label Text="Select a date:"
+            <DatePicker />
+
+            <Label Text="Select a time:" />
+            <TimePicker />
+                
+            <Label Text="Select a fruit:"
+            <Picker>
+                <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Apple</x:String>
+                            <x:String>Banana</x:String>
+                            <x:String>Cherry</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    </Picker>
+
+         <Label Text="Search:" />
+         <SearchBar Placeholder="Type to search..." />
+
+         <Label Text="Loadiing progress:"/>
+         <ProgressBar Progress="0.5" ></ProgressBar>
+
+
+    </ScrollView>
+
+</ContentPage>
