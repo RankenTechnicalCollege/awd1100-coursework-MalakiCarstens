@@ -21,33 +21,37 @@ namespace Lab2
         {
             if (double.TryParse(txtWindInput.Text, out double wind))
             {
-             
-                    if (wind >= 157)
+
+                if (wind >= 157)
+                {
                     lblCategory.Text = $"Category 5";
-            }
-            else if (wind >= 130)
-            {
-                lblCategory.Text = $"Category 4";
-            }
-            else if (wind >= 111)
-            {
-                lblCategory.Text = $"Category 3";
-            }
-            else if (wind >= 96)
-            {
-                lblCategory.Text = $"Category 2";
-            }
-            else if (wind >= 74)
-            {
-                lblCategory.Text = $"Category 1";
+                }
+
+                else if (wind >= 130)
+                {
+                    lblCategory.Text = $"Category 4";
+                }
+                else if (wind >= 111)
+                {
+                    lblCategory.Text = $"Category 3";
+                }
+                else if (wind >= 96)
+                {
+                    lblCategory.Text = $"Category 2";
+                }
+                else if (wind >= 74)
+                {
+                    lblCategory.Text = $"Category 1";
+                }
+
+                else
+                {
+                    lblCategory.Text = $"Not a hurricane.";
+                }
             }
 
-            else
-            {
-                lblCategory.Text = $"Not a hurricane.";
-            }
         }
 
-        
+
     }
 }

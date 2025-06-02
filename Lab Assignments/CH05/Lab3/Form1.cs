@@ -13,7 +13,7 @@ namespace Lab3
     public partial class Form1 : Form
     {
         Random rand = new Random();
-        int round = 1;
+        int round = 0;
         int playerScore = 0;
         int computerScore = 0;
         public Form1()
@@ -38,7 +38,7 @@ namespace Lab3
 
         private void PlayRound(int playerChoice)
         {
-            if (round >= 3)
+            if (round > 3)
             {
                 lblResult.Text = $"Game Over";
             }
