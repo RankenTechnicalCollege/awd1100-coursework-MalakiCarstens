@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingDemo", "BindingDemo.csproj", "{8350F1E9-A772-453E-9124-52A10BF9B68F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8350F1E9-A772-453E-9124-52A10BF9B68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8350F1E9-A772-453E-9124-52A10BF9B68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8350F1E9-A772-453E-9124-52A10BF9B68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8350F1E9-A772-453E-9124-52A10BF9B68F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF4AF153-B670-450B-BB11-FB72D4A02685}
+	EndGlobalSection
+EndGlobal
