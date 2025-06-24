@@ -41,7 +41,7 @@
             this.txtAccountNum = new System.Windows.Forms.TextBox();
             this.txtPinNum = new System.Windows.Forms.TextBox();
             this.txtDeposit = new System.Windows.Forms.TextBox();
-            this.txtWithdrawl = new System.Windows.Forms.TextBox();
+            this.txtWithdrawal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -139,7 +139,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(361, 39);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Would you like to make a withdrawl?";
+            this.label6.Text = "Would you like to make a withdrawal?";
             // 
             // txtAccountNum
             // 
@@ -162,19 +162,19 @@
             this.txtDeposit.Size = new System.Drawing.Size(310, 22);
             this.txtDeposit.TabIndex = 12;
             // 
-            // txtWithdrawl
+            // txtWithdrawal
             // 
-            this.txtWithdrawl.Location = new System.Drawing.Point(59, 519);
-            this.txtWithdrawl.Name = "txtWithdrawl";
-            this.txtWithdrawl.Size = new System.Drawing.Size(310, 22);
-            this.txtWithdrawl.TabIndex = 13;
+            this.txtWithdrawal.Location = new System.Drawing.Point(59, 519);
+            this.txtWithdrawal.Name = "txtWithdrawal";
+            this.txtWithdrawal.Size = new System.Drawing.Size(310, 22);
+            this.txtWithdrawal.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 858);
-            this.Controls.Add(this.txtWithdrawl);
+            this.Controls.Add(this.txtWithdrawal);
             this.Controls.Add(this.txtDeposit);
             this.Controls.Add(this.txtPinNum);
             this.Controls.Add(this.txtAccountNum);
@@ -210,7 +210,7 @@
         private System.Windows.Forms.TextBox txtAccountNum;
         private System.Windows.Forms.TextBox txtPinNum;
         private System.Windows.Forms.TextBox txtDeposit;
-        private System.Windows.Forms.TextBox txtWithdrawl;
+        private System.Windows.Forms.TextBox txtWithdrawal;
     }
 }
 

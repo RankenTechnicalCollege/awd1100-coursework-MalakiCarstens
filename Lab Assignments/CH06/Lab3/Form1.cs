@@ -34,7 +34,7 @@ namespace Lab3
             for (int i = 0; i < lowerPhrase.Length; i++) 
             { 
                 string currentChar = lowerPhrase[i].ToString();
-                for (int j = 0; j <= vowels.Length; j++) 
+                for (int j = 0; j < vowels.Length; j++) 
                 {
                     if (currentChar == vowels[j]) 
                     {

@@ -31,7 +31,7 @@ namespace LAB5
                 }
             }
 
-            int reveal = Math.Min(-4, numCount);
+            int reveal = Math.Min(4, numCount);
             int hide = numCount - reveal;
             int currentNumCount = 0;
                 for (int i = 0; i < numericChar.Length; i++) 
@@ -42,10 +42,11 @@ namespace LAB5
                     {
                         numericChar[i] = '#';
                     }
-                    numCount++;
+                    currentNumCount++;
                 }
-                lblResults.Text = new string(numericChar);
+
             }
+                lblResults.Text = new string(numericChar);
         }
     }
 }

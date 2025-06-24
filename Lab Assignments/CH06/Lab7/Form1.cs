@@ -43,9 +43,9 @@ namespace Lab7
 
         private void btnWithdrawal_Click(object sender, EventArgs e)
         {
-            if (decimal.TryParse(txtWithdrawl.Text, out decimal amount) && amount > 0)
+            if (decimal.TryParse(txtWithdrawal.Text, out decimal amount) && amount > 0)
             {
-                MakeWithdrawl(amount);
+                MakeWithdrawal(amount);
             }
             else
             {
@@ -81,18 +81,18 @@ namespace Lab7
             lblResults.Text = "";
         }
 
-        private void MakeWithdrawl(decimal withdrawlAmount) 
+        private void MakeWithdrawal(decimal withdrawalAmount) 
         {
             if (loggedInIndex != -1)
             {
-                if (withdrawlAmount <= balances[loggedInIndex])
+                if (withdrawalAmount <= balances[loggedInIndex])
                 {
-                    balances[loggedInIndex] = balances[loggedInIndex] - withdrawlAmount;
-                    lblResults.Text = $"Your new balance is {balances:F2}";
+                    balances[loggedInIndex] = balances[loggedInIndex] - withdrawalAmount;
+                    lblResults.Text = $"Your new balance is {balances[loggedInIndex]:F2}";
                 }
                 else
                 {
-                    lblResults.Text = $"Insufficient money to make withdrawl.";
+                    lblResults.Text = $"Insufficient money to make withdrawal.";
                 }
             }
         }
@@ -102,12 +102,12 @@ namespace Lab7
             if (loggedInIndex != -1)
             {
                 balances[loggedInIndex] = depositAmount + balances[loggedInIndex];
-                lblResults.Text = $"Your new balance is {balances:F2}";
+                lblResults.Text = $"Your new balance is {balances[loggedInIndex]:F2}";
             }
 
             else 
             {
-                lblResults.Text = $"You must be logged in to make deposits/withdrawls.";        
+                lblResults.Text = $"You must be logged in to make deposits/withdrawals.";        
             }
         }
 
