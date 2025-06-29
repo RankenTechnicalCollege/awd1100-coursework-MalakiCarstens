@@ -22,9 +22,9 @@ namespace LAB3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string[] games = { "Player Unknown's Battlegrounds (PUBG)", "Marvel Rivals", "Call of Duty: Black Ops III", "Battlefield 4", "Super Mario Odyssey" };
-            string[] publisher = { "Bluehole", "NetEase Games", "Activision", "Electronic Arts (EA)", "Nintendo" };
-            int[] price = { 35, 0, 60, 20, 60 };
+            string[] games = { "Player Unknown's Battlegrounds (PUBG)", "League of Legends", "Marvel Rivals", "Call of Duty: Black Ops III", "Battlefield 4", "Super Mario Odyssey" };
+            string[] publisher = { "Bluehole", "Riot Games", "NetEase Games", "Activision", "Electronic Arts (EA)", "Nintendo" };
+            int[] price = { 35, 0, 0, 60, 20, 60 };
             bool tof = false;
 
 
