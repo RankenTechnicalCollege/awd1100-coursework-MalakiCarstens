@@ -47,29 +47,25 @@ namespace Lab4
 
         public void CalculateStats(out int min, out int max, out double sum, out double avg, params int[] numbers)
         {
-            min = 0;
-            max = 0;
-            sum = 0.0;
-            avg = 0.0;
-
             min = numbers[0];
             max = numbers[0];
-            sum = numbers[0];
+            sum = 0;
 
-
-            for (int i = 1; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 if (numbers[i] < min)
-                {
                     min = numbers[i];
-                    if (numbers[i] > max)
-                    {
-                        max = numbers[i];
-                        sum = sum + numbers[i];
-                    }
-                    avg = sum / numbers.Length;
-                }
+
+                if (numbers[i] > max)
+                    max = numbers[i];
+
+                sum += numbers[i];
             }
+
+            avg = sum / numbers.Length;
         }
+
     }
 }
+    
+

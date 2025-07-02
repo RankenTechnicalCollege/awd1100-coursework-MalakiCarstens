@@ -37,10 +37,10 @@ namespace Lab1
             int entry3 = num3;
             int entry4 = num4;
 
-            num1 = num4;
-            num2 = num3;
-            num3 = num2;
-            num4 = num1;
+            num1 = entry4;
+            num2 = entry3;
+            num3 = entry2;
+            num4 = entry1;
         }
     }
 }

@@ -22,31 +22,32 @@ namespace Lab3
         {
             string input = txtBidAmount.Text;          
             string result = ParseBid(input);
+            lblResults.Text = result;
         }
 
         public string ParseBid(string bidString)
         {
-            string inputBid = bidString.Trim();
+            string inputBid = bidString.Trim().ToLower();
             inputBid = inputBid.Replace("dollars", "");
             inputBid = inputBid.Replace("$", " ");
             if (double.TryParse(inputBid, out double bid) && bid > 0)
             {
                 if (bid < 10)
                 {
-                    return lblResults.Text = "Bid must be 10 dollars or above.";
+                    return "Bid must be 10 dollars or above.";
                 }
                 else if (bid > 10)
                 {
-                    return lblResults.Text = $"Your bid of {bid:F2} was accepted.";
+                    return $"Your bid of {bid:F2} was accepted.";
                 }
                 else
                 {
-                    return lblResults.Text = "Invalid input.";
+                    return "Invalid input.";
                 }
               
             }
 
-            return lblResults.Text = "Please enter a valid numeric bid.";
+            return "Please enter a valid numeric bid.";
         }
     }
 }
