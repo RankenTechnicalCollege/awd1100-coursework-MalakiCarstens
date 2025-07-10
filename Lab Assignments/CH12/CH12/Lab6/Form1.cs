@@ -16,6 +16,12 @@ namespace Lab6
         public Form1()
         {
             InitializeComponent();
+            rooms.Add(new Room("Living Room", 15, 20));
+            rooms.Add(new Room("Bedroom", 12, 14));
+            rooms.Add(new Room("Kitchen", 10, 12));
+            rooms.Add(new Room("Bathroom", 8, 10));
+            rooms.Add(new Room("Office", 10, 10));
+            rooms.Add(new Room("Garage", 18, 20));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -38,10 +44,25 @@ namespace Lab6
             }
             Room addRoom = new Room(name, width, length);
             rooms.Add(addRoom);
-            lblResults.Text = $"Room Name: {addRoom.name} needs {addRoom.boxes} Boxes\n" + $"Rooms Count: {rooms.Count}\n" +
+            int totalBoxes = GetTotalBoxes();
+            lblResults.Text =
+                      $"Room Name: {addRoom.name}\n" +
                       $"Width: {addRoom.width}\n" +
                       $"Length: {addRoom.length}\n" +
-                      $"Area: {addRoom.area}\n";
+                      $"Area: {addRoom.area}\n" +
+                      $"Boxes Needed: {addRoom.boxes}\n\n" +
+                      $"Total Boxes Needed: {totalBoxes}\n" +
+                      $"Total Rooms: {rooms.Count}";
         }
+        private int GetTotalBoxes()
+        {
+            int total = 0;
+            foreach (Room room in rooms)
+            {
+                total += room.boxes;
+            }
+            return total;
+        }
+
     }
 }

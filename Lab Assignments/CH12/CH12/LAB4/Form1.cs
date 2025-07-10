@@ -42,7 +42,7 @@ namespace LAB4
         }
         private void ShowGameInfo(int gameIndex)
         {
-            if (gameIndex >= 0 || gameIndex < gameList.Count)
+            if (gameIndex >= 0 && gameIndex < gameList.Count)
             {
                 Game foundGame = gameList[gameIndex];
                 lblResults.Text = $"Game: {foundGame.GetName()}\n Publisher: {foundGame.GetPublisher()}\n Price: {foundGame.GetPrice():F2}";

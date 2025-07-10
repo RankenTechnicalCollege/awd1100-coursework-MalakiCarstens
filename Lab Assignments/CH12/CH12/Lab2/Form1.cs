@@ -22,24 +22,30 @@ namespace Lab2
             stock.Add(new InventoryItem("Microphone", 54331, 50.00m, 600.00m, 12));
             stock.Add(new InventoryItem("Keyboard", 54341, 90.98m, 545.88m, 6));
             stock.Add(new InventoryItem("Mouse", 54351, 39.90m, 798.00m, 20));
-            stock.Add(new InventoryItem("Gaming Chair", 54351, 249.99m, 999.96m, 4));
+            stock.Add(new InventoryItem("Gaming Chair", 54361, 249.99m, 999.96m, 4));
         }
 
         private void btnSearch1_Click(object sender, EventArgs e)
         {
             string name = txtSearchName.Text.ToLower();
             InventoryItem item = null;
+
             foreach (InventoryItem it in stock)
             {
                 if (it.getItemName().ToLower().Contains(name))
                 {
-                    item = it; 
+                    item = it;
                     break;
                 }
-                else
-                {
-                    lblResults.Text = "Item not found.";
-                }
+            }
+
+            if (item != null)
+            {
+                lblResults.Text = $"Found: {item.getItemName()} | UPC: {item.getUpc()} | Price: ${item.getPrice()}";
+            }
+            else
+            {
+                lblResults.Text = "Item not found.";
             }
         }
 
@@ -48,6 +54,7 @@ namespace Lab2
             if (int.TryParse(txtSearchUPC.Text, out int upc))
             {
                 InventoryItem item = null;
+
                 foreach (InventoryItem it in stock)
                 {
                     if (it.getUpc() == upc)
@@ -55,46 +62,61 @@ namespace Lab2
                         item = it;
                         break;
                     }
-                    else
-                    {
-                        lblResults.Text = "UPC not found.";
-                    }
                 }
+
+                if (item != null)
+                {
+                    lblResults.Text = $"Found: {item.getItemName()} | UPC: {item.getUpc()} | Price: ${item.getPrice()}";
+                }
+                else
+                {
+                    lblResults.Text = "Item not found.";
+                }
+            }
+            else
+            {
+                lblResults.Text = "Invalid UPC input.";
             }
         }
 
+    
+
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtAccessKeyInput3.Text != accessKey)
+            if (txtAccessKeyInput.Text != accessKey)
             {
                 lblResults.Text = "Invalid Access Key.";
+                return;
             }
 
-            string name = txtNewPriceInput.Text;
-            if (!decimal.TryParse(txtNewPriceInput.Text, out decimal updatedPrice))
+            string name = txtSearchName.Text.ToLower();
+
+            if (decimal.TryParse(txtNewPriceInput.Text, out decimal updatedPrice))
             {
-               
-                InventoryItem item = null;
-                foreach (InventoryItem it in stock)
+                var item = stock.Find(i => i.getItemName().ToLower().Contains(name));
+                if (item != null)
                 {
-                    if (it.getItemName().ToLower().Contains(name))
-                    {
-                        item = it; 
-                        break;
-                    }
-                    else
-                    {
-                        lblResults.Text = "Item not found.";
-                    }
+                    item.setPrice(updatedPrice);
+                    lblResults.Text = $"Price updated to ${updatedPrice} for {item.getItemName()}";
                 }
-            } 
+                else
+                {
+                    lblResults.Text = "Item not found.";
+                }
+            }
+            else
+            {
+                lblResults.Text = "Invalid price format.";
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtAccessKeyInput3.Text != accessKey)
+            if (txtAccessKeyInput2.Text != accessKey)
             {
                 lblResults.Text = "Invalid Access Key.";
+                return;
             }
             if (int.TryParse(txtVerifyUpcInput.Text, out int upc))
             {
