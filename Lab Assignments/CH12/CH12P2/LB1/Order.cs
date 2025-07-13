@@ -25,7 +25,21 @@ namespace LB1
         {
             get
             {
-               return _sundae.Price + Soda.Price;
+               double price = 0;
+                if (_soda == null)
+                {
+                    price = _sundae.Price;
+                }
+                else if(_sundae == null)
+                {
+                    price = _soda.Price;
+                }
+                else
+                {
+                    price = Sundae.Price + _soda.Price;
+                }
+                return price;
+
             }
         }
 

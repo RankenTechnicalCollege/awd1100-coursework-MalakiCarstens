@@ -35,28 +35,30 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkSoda = new System.Windows.Forms.CheckBox();
+            this.chkSundae = new System.Windows.Forms.CheckBox();
             this.lblNameOfFoodError = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.chkSundae = new System.Windows.Forms.CheckBox();
-            this.chkSoda = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.grpSundaeToppings = new System.Windows.Forms.GroupBox();
+            this.chkMango = new System.Windows.Forms.CheckBox();
+            this.chkPeach = new System.Windows.Forms.CheckBox();
+            this.chkLime = new System.Windows.Forms.CheckBox();
+            this.chkSyrup = new System.Windows.Forms.CheckBox();
+            this.chkNuts = new System.Windows.Forms.CheckBox();
+            this.chkSprinkles = new System.Windows.Forms.CheckBox();
+            this.lblToppingError = new System.Windows.Forms.Label();
+            this.lblMixinError = new System.Windows.Forms.Label();
+            this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.grpDrinkMixins = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpSundaeToppings.SuspendLayout();
+            this.grpDrinkMixins.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -83,7 +85,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(42, 728);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(228, 48);
             this.button1.TabIndex = 2;
@@ -94,7 +96,7 @@
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(20, 103);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(385, 28);
             this.txtUserName.TabIndex = 3;
@@ -110,13 +112,36 @@
             this.groupBox1.Controls.Add(this.chkSoda);
             this.groupBox1.Controls.Add(this.chkSundae);
             this.groupBox1.Location = new System.Drawing.Point(41, 282);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(604, 138);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            // 
+            // chkSoda
+            // 
+            this.chkSoda.AutoSize = true;
+            this.chkSoda.Location = new System.Drawing.Point(372, 29);
+            this.chkSoda.Margin = new System.Windows.Forms.Padding(4);
+            this.chkSoda.Name = "chkSoda";
+            this.chkSoda.Size = new System.Drawing.Size(63, 26);
+            this.chkSoda.TabIndex = 8;
+            this.chkSoda.Text = "Yes";
+            this.chkSoda.UseVisualStyleBackColor = true;
+            this.chkSoda.CheckedChanged += new System.EventHandler(this.chkSoda_CheckedChanged);
+            // 
+            // chkSundae
+            // 
+            this.chkSundae.AutoSize = true;
+            this.chkSundae.Location = new System.Drawing.Point(8, 29);
+            this.chkSundae.Margin = new System.Windows.Forms.Padding(4);
+            this.chkSundae.Name = "chkSundae";
+            this.chkSundae.Size = new System.Drawing.Size(63, 26);
+            this.chkSundae.TabIndex = 0;
+            this.chkSundae.Text = "Yes";
+            this.chkSundae.UseVisualStyleBackColor = true;
+            this.chkSundae.CheckedChanged += new System.EventHandler(this.chkSundae_CheckedChanged);
             // 
             // lblNameOfFoodError
             // 
@@ -150,28 +175,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Do you want a soda?";
             // 
-            // chkSundae
-            // 
-            this.chkSundae.AutoSize = true;
-            this.chkSundae.Location = new System.Drawing.Point(8, 29);
-            this.chkSundae.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkSundae.Name = "chkSundae";
-            this.chkSundae.Size = new System.Drawing.Size(63, 26);
-            this.chkSundae.TabIndex = 0;
-            this.chkSundae.Text = "Yes";
-            this.chkSundae.UseVisualStyleBackColor = true;
-            // 
-            // chkSoda
-            // 
-            this.chkSoda.AutoSize = true;
-            this.chkSoda.Location = new System.Drawing.Point(372, 29);
-            this.chkSoda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkSoda.Name = "chkSoda";
-            this.chkSoda.Size = new System.Drawing.Size(63, 26);
-            this.chkSoda.TabIndex = 8;
-            this.chkSoda.Text = "Yes";
-            this.chkSoda.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.Location = new System.Drawing.Point(39, 465);
@@ -189,108 +192,105 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Drink Mixins";
             // 
-            // groupBox2
+            // grpSundaeToppings
             // 
-            this.groupBox2.Controls.Add(this.checkBox8);
-            this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Location = new System.Drawing.Point(43, 490);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(602, 144);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.grpSundaeToppings.Controls.Add(this.chkSyrup);
+            this.grpSundaeToppings.Controls.Add(this.chkNuts);
+            this.grpSundaeToppings.Controls.Add(this.chkSprinkles);
+            this.grpSundaeToppings.Location = new System.Drawing.Point(49, 490);
+            this.grpSundaeToppings.Name = "grpSundaeToppings";
+            this.grpSundaeToppings.Size = new System.Drawing.Size(209, 144);
+            this.grpSundaeToppings.TabIndex = 11;
+            this.grpSundaeToppings.TabStop = false;
+            this.grpSundaeToppings.Visible = false;
             // 
-            // checkBox3
+            // chkMango
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 27);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(106, 26);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Sprinkles";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkMango.AutoSize = true;
+            this.chkMango.Location = new System.Drawing.Point(6, 91);
+            this.chkMango.Name = "chkMango";
+            this.chkMango.Size = new System.Drawing.Size(141, 26);
+            this.chkMango.TabIndex = 5;
+            this.chkMango.Text = "Mango Flavor";
+            this.chkMango.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkPeach
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 59);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(69, 26);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "Nuts";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkPeach.AutoSize = true;
+            this.chkPeach.Location = new System.Drawing.Point(6, 59);
+            this.chkPeach.Name = "chkPeach";
+            this.chkPeach.Size = new System.Drawing.Size(138, 26);
+            this.chkPeach.TabIndex = 4;
+            this.chkPeach.Text = "Peach Flavor";
+            this.chkPeach.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkLime
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 91);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(165, 26);
-            this.checkBox5.TabIndex = 2;
-            this.checkBox5.Text = "Chocolate Syurp";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkLime.AutoSize = true;
+            this.chkLime.Location = new System.Drawing.Point(6, 27);
+            this.chkLime.Name = "chkLime";
+            this.chkLime.Size = new System.Drawing.Size(125, 26);
+            this.chkLime.TabIndex = 3;
+            this.chkLime.Text = "Lime Flavor";
+            this.chkLime.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // chkSyrup
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(45, 637);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(236, 28);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Only 2 toppings allowed";
+            this.chkSyrup.AutoSize = true;
+            this.chkSyrup.Location = new System.Drawing.Point(6, 91);
+            this.chkSyrup.Name = "chkSyrup";
+            this.chkSyrup.Size = new System.Drawing.Size(165, 26);
+            this.chkSyrup.TabIndex = 2;
+            this.chkSyrup.Text = "Chocolate Syurp";
+            this.chkSyrup.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkNuts
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(358, 27);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(125, 26);
-            this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "Lime Flavor";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkNuts.AutoSize = true;
+            this.chkNuts.Location = new System.Drawing.Point(6, 59);
+            this.chkNuts.Name = "chkNuts";
+            this.chkNuts.Size = new System.Drawing.Size(69, 26);
+            this.chkNuts.TabIndex = 1;
+            this.chkNuts.Text = "Nuts";
+            this.chkNuts.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // chkSprinkles
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(358, 59);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(138, 26);
-            this.checkBox7.TabIndex = 4;
-            this.checkBox7.Text = "Peach Flavor";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkSprinkles.AutoSize = true;
+            this.chkSprinkles.Location = new System.Drawing.Point(6, 27);
+            this.chkSprinkles.Name = "chkSprinkles";
+            this.chkSprinkles.Size = new System.Drawing.Size(106, 26);
+            this.chkSprinkles.TabIndex = 0;
+            this.chkSprinkles.Text = "Sprinkles";
+            this.chkSprinkles.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // lblToppingError
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(358, 91);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(141, 26);
-            this.checkBox8.TabIndex = 5;
-            this.checkBox8.Text = "Mango Flavor";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.lblToppingError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToppingError.ForeColor = System.Drawing.Color.Red;
+            this.lblToppingError.Location = new System.Drawing.Point(45, 637);
+            this.lblToppingError.Name = "lblToppingError";
+            this.lblToppingError.Size = new System.Drawing.Size(236, 28);
+            this.lblToppingError.TabIndex = 3;
+            this.lblToppingError.Text = "Only 2 toppings allowed";
             // 
-            // label8
+            // lblMixinError
             // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(383, 637);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(236, 28);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Only 1 mixin allowed";
+            this.lblMixinError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMixinError.ForeColor = System.Drawing.Color.Red;
+            this.lblMixinError.Location = new System.Drawing.Point(383, 637);
+            this.lblMixinError.Name = "lblMixinError";
+            this.lblMixinError.Size = new System.Drawing.Size(236, 28);
+            this.lblMixinError.TabIndex = 12;
+            this.lblMixinError.Text = "Only 1 mixin allowed";
             // 
-            // richTextBox1
+            // rtbOutput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(746, 128);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(592, 537);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.rtbOutput.Location = new System.Drawing.Point(746, 128);
+            this.rtbOutput.Name = "rtbOutput";
+            this.rtbOutput.Size = new System.Drawing.Size(592, 537);
+            this.rtbOutput.TabIndex = 13;
+            this.rtbOutput.Text = "";
             // 
             // label9
             // 
@@ -319,19 +319,32 @@
             this.lblTotalPrice.Size = new System.Drawing.Size(115, 22);
             this.lblTotalPrice.TabIndex = 16;
             // 
+            // grpDrinkMixins
+            // 
+            this.grpDrinkMixins.Controls.Add(this.chkLime);
+            this.grpDrinkMixins.Controls.Add(this.chkMango);
+            this.grpDrinkMixins.Controls.Add(this.chkPeach);
+            this.grpDrinkMixins.Location = new System.Drawing.Point(383, 490);
+            this.grpDrinkMixins.Name = "grpDrinkMixins";
+            this.grpDrinkMixins.Size = new System.Drawing.Size(211, 144);
+            this.grpDrinkMixins.TabIndex = 3;
+            this.grpDrinkMixins.TabStop = false;
+            this.grpDrinkMixins.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1375, 901);
+            this.Controls.Add(this.grpDrinkMixins);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.rtbOutput);
+            this.Controls.Add(this.lblMixinError);
+            this.Controls.Add(this.lblToppingError);
+            this.Controls.Add(this.grpSundaeToppings);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -344,13 +357,15 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpSundaeToppings.ResumeLayout(false);
+            this.grpSundaeToppings.PerformLayout();
+            this.grpDrinkMixins.ResumeLayout(false);
+            this.grpDrinkMixins.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,19 +386,20 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox grpSundaeToppings;
+        private System.Windows.Forms.CheckBox chkNuts;
+        private System.Windows.Forms.CheckBox chkSprinkles;
+        private System.Windows.Forms.Label lblToppingError;
+        private System.Windows.Forms.CheckBox chkSyrup;
+        private System.Windows.Forms.CheckBox chkMango;
+        private System.Windows.Forms.CheckBox chkPeach;
+        private System.Windows.Forms.CheckBox chkLime;
+        private System.Windows.Forms.Label lblMixinError;
+        private System.Windows.Forms.RichTextBox rtbOutput;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.GroupBox grpDrinkMixins;
     }
 }
 

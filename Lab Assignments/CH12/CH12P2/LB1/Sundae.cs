@@ -10,7 +10,6 @@ namespace LB1
     {
         public const double BASE_PRICE = 4.5;
         public const double TOPPING_PRICE = 0.5;
-
         private SundaeTopping[] _toppings;
         private int _toppingCount;
         private double _price;
@@ -48,8 +47,8 @@ namespace LB1
 
         public void AddTopping(SundaeTopping t)
         {
-            _toppings[_toppingsCount] = t;
-            _toppingsCount++;
+            _toppings[_toppingCount] = t;
+            _toppingCount++;
             _price += TOPPING_PRICE;
         }
     }
