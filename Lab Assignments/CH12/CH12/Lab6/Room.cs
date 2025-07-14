@@ -20,7 +20,11 @@ namespace Lab6
             _width = width;
             _length = length;
             _area = width * length;
-            _boxes = (_area + 11) / 12 + 1;
+            _boxes = _area / 10;
+            if (_area % 10 != 0)
+            {
+                _boxes += 1;
+            }
         }
 
         public string name { get { return _name; } }
@@ -28,5 +32,11 @@ namespace Lab6
         public int length { get { return _length; } }
         public int area { get { return _area; } }
         public int boxes { get { return _boxes; } }
+
+        public override string ToString()
+        {
+            return $" {_name}({width} x{_length}) needs {_boxes} boxes";
+        }
+
     }
 }

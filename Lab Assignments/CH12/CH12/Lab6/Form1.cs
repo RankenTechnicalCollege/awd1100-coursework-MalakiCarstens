@@ -13,15 +13,16 @@ namespace Lab6
     public partial class Form1 : Form
     {
         List<Room> rooms = new List<Room>();
+
         public Form1()
         {
             InitializeComponent();
-            rooms.Add(new Room("Living Room", 15, 20));
-            rooms.Add(new Room("Bedroom", 12, 14));
-            rooms.Add(new Room("Kitchen", 10, 12));
-            rooms.Add(new Room("Bathroom", 8, 10));
-            rooms.Add(new Room("Office", 10, 10));
-            rooms.Add(new Room("Garage", 18, 20));
+            //rooms.Add(new Room("Living Room", 15, 20));
+            //rooms.Add(new Room("Bedroom", 12, 14));
+            //rooms.Add(new Room("Kitchen", 10, 12));
+            //rooms.Add(new Room("Bathroom", 8, 10));
+            //rooms.Add(new Room("Office", 10, 10));
+            //rooms.Add(new Room("Garage", 18, 20));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -45,15 +46,19 @@ namespace Lab6
             Room addRoom = new Room(name, width, length);
             rooms.Add(addRoom);
             int totalBoxes = GetTotalBoxes();
-            lblResults.Text =
-                      $"Room Name: {addRoom.name}\n" +
-                      $"Width: {addRoom.width}\n" +
-                      $"Length: {addRoom.length}\n" +
-                      $"Area: {addRoom.area}\n" +
-                      $"Boxes Needed: {addRoom.boxes}\n\n" +
-                      $"Total Boxes Needed: {totalBoxes}\n" +
-                      $"Total Rooms: {rooms.Count}";
+            string result = "";
+            result += $"Rooms: {rooms.Count}/20\n";
+            result += $"Total Boxes Needed: {totalBoxes}\n\n";
+
+            foreach (Room room in rooms)
+            {
+                result += room.ToString() + "\n" ;
+            }
+
+            lblResults.Text = result;  
         }
+
+        
         private int GetTotalBoxes()
         {
             int total = 0;
@@ -62,6 +67,7 @@ namespace Lab6
                 total += room.boxes;
             }
             return total;
+           
         }
 
     }
