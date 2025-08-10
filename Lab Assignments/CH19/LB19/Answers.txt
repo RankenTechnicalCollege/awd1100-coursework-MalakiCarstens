@@ -1,0 +1,43 @@
+LAB 19 Questions
+
+1. select book_code, title from book
+2. select * from publisher
+3. select publisher_name from publisher where city = 'Boston'
+4. select publisher_name from publisher where not city = 'Boston'
+5. select branch_name from branch where num_employees >= 9
+6. select book_code, title from book where type = 'SFI'
+7. select book_code, title from book where type = 'SFI' and paperback = 'y'
+8. select book_code, title from book where type = 'SFI' or publisher_code = 'SC'
+9. select book_code, title, price from book where price between 20 and 30
+10. select book_code,title from book where type = 'MYS' and price < 20
+11. select book_code, title, price * 0.9 as discounted_price from book
+12. select publisher_name from publisher where publisher_name like '% and %'
+13. select book_code,title from book where type = 'SFI' or type = 'MYS' or  type = 'ART' 
+14. select book_code,title from book where type = 'SFI' or type = 'MYS' or  type = 'ART' order by title 
+15. select book_code,title from book where type = 'SFI' or type = 'MYS' or  type = 'ART' order by price desc, title 
+16. select distinct type from book 
+17. select type count from book where type = 'SFI'
+18. select type, avg (price) from book group by type
+19. select type, avg (price) from book where paperback = 'y' group by type
+20. select type, avg (price) from book where paperback = 'y' group by type having avg (price) > 10
+21. select * from book where price = (select max(price) from book) 
+22. select title, price from book where price = (select min(price) from book)
+23. select sum (num_employees) from branch
+
+
+1. select book.book_code, book.title, publisher.publisher_name, publisher.publisher_title from book join publisher on book.publisher_code = publisher.publisher_code
+2. select book.book_code, book.title, book.price, publisher.publisher_name from book join publisher on book.publisher.code = publisher.publisher_code where publisher.publisher_name = 'Plume'
+3. select book.book_code, book.title, book.price, publisher.publisher_name from book join publisher on book.publisher.code = publisher.publisher_code where publisher.publisher_name = 'Plume' and book.price >= 14
+4. select book.book_code, book.title inventory.on_hand branch.branch_num from ((book join inventory on book.book_code = inventory.book_code) join branch on inventory.branch_num = branch.branch_num) where branch.branch_num = 4
+5. select book.title, book.type, publisher.publisher_name from book join publisher on book.publisher_code = publisher.publisher_code where book.type = 'PSY' and publisher.publisher_name = 'Jove Publications'
+6. select book.type from book where book_code in(select book_code from wrote where author_num = 18)
+7.  select book.type from book where exist(select book_code from wrote where wrote.book_code = book.book_code and wrote.author_num = 18)
+8. select book.book_code, book.title from book join wrote on book.book_code = wrote.book_code join author on wrote.author_num = author on author_num join inventory on wrote.book_code = inventory.book_code join branch on inventory.branch_num = branch.branch_num where author.author_num = 20 and branch.branch_num = 2
+9. select b1.book_code as book1, b2.book_code as book2 from book b1 join book  b2 on b1.price = b2.price and b1.book_code < b2.book_code order by b1.book_code b2.book_code
+10. select book.title, author.author_last, inventory.on_hand from book join wrote on book.book_code = wrote.book_code join author on wrote.author_num = author.author_num join inventory on wrote.book_code = inventory.book_code join branch on inventory.branch_num = branch.branch_num where branch.branch_num = 4
+11. select book.title, author.author_last, inventory.on_hand from book join wrote on book.book_code = wrote.book_code join author on wrote.author_num = author.author_num join inventory on wrote.book_code = inventory.book_code join branch on inventory.branch_num = branch.branch_num where branch.branch_num = 4 and book.paperback = 'y'
+12. select book.book_code, book.title, book.price from book join publisher on publisher_code = publisher.publisher_code where publisher.city = 'Boston' union select book.book_code, book.title, book.price from book join publisher on book.publisher code = publisher.publisher_code where book.price > 10
+13. select book.book_code, book.title, book.price from book join publisher on book.publisher_code = publisher.publisher_code where not publisher.city = 'Boston' and book.price > 10
+14. select book.book_code, book.title, book.price from book where book.price > all(select book.price from book where book.type = 'HOR')
+15. select book.book_code, book.title, book.price from book where book.price > any(select book.price from book where book.type = 'HOR')
+16. select book.book_code, book.title, inventory.on_hand from book left join inventory on book.book_code = inventory.book_code and inventory.branch_num = 2 order by book.book_code
